@@ -1,0 +1,160 @@
+.dark{
+    background-color: black;
+}
+
+.bcard{
+    width: 18%;
+    height: 300px;
+    border: 1px solid rgba(185, 185, 185, 0.863);
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(196, 196, 196);
+    margin: 10px;
+    padding: 5px;
+    perspective: 1000px;
+}
+
+.bcard-img{
+    left: 0;
+}
+
+.bcard-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 5px;
+}
+.card-title{
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.bcard-author{
+    padding: 0 5px 5px 5px;
+}
+
+.bcard-button{
+    display:flex;
+    justify-content: space-around;
+}
+
+.card-title:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #888;
+}
+.switch{
+    width: 50px;
+    height: 10px;
+    background-color: lightgray;
+    box-shadow: 0px 10px 20px grey inset;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+.check{
+    margin:2px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.light{
+    transition: transform 1s;
+    transform: translate(0px,-7px);
+    background-color: cornsilk;
+}
+.dark{
+    transition: transform 1s;
+    transform: translate(26px,-7px);
+    background-color: chartreuse;
+}
+
+@media only screen and (min-width:426px){
+   .flip-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .bcard:hover .flip-card {
+        transform: rotateY(-180deg);
+    }
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+    .flip-card-front {
+        color: black;
+    }
+    .flip-card-back {
+        background-color: white;
+        transform: rotateY(-180deg);
+    } 
+}
+
+@media only screen and (max-width:1200px) {
+    div.bcard{
+        width: 22.5%;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    div.bcard{
+        width: 30%;
+        height: 260px;
+    }
+}
+
+@media only screen and (max-width:769px) {
+    .bcard{
+        width: 45%;
+    }
+    .bcard-img{
+        max-height: 250px;
+    }
+}
+
+@media only screen and (max-width:426px) {
+    .bcard{
+        width: 100%;
+        height: 136px;
+    }
+    .bcard-img{
+        width: 20%;
+        min-height: 116px;
+        max-height: 116px;
+        display: inline;
+    }
+    .bcard-body{
+        width: 74%;
+        position: absolute;
+        display: inline-flex;
+        flex-direction: row;
+    }
+    .bcard-text{
+        width: 76%;
+    }
+    .card-title{
+        width: 90%;
+    }
+    .bcard-author{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .bcard-button{
+        float: right;
+        display:inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .bcard-body > h5,p {
+        width: 60%;
+        display: inline-block;
+    }
+}
